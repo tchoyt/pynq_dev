@@ -1,0 +1,99 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2016.1
+  Build 1538259 on Fri Apr 08 16:12:49 MDT 2016
+  Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/home/thoyt/bin/xilinx/Vivado_HLS/2016.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'thoyt' on host 'tchoytdell7510' (Linux_x86_64 version 4.10.0-38-generic) on Fri Nov 03 15:38:59 EDT 2017
+INFO: [HLS 200-10] On os Ubuntu 16.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/thoyt/fpga_work/pynq/boards/ip/hls'
+INFO: [HLS 200-10] Opening project '/home/thoyt/fpga_work/pynq/boards/ip/hls/pixel_pack'.
+INFO: [HLS 200-10] Adding design file 'pixel_pack/pixel_pack.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'pixel_pack/pixel_pack_test.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/thoyt/fpga_work/pynq/boards/ip/hls/pixel_pack/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 7ns.
+INFO: [SYN 201-201] Setting up clock 'control' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+make[1]: Entering directory '/home/thoyt/fpga_work/pynq/boards/ip/hls/pixel_pack/solution1/csim/build'
+make[1]: 'csim.exe' is up to date.
+make[1]: Leaving directory '/home/thoyt/fpga_work/pynq/boards/ip/hls/pixel_pack/solution1/csim/build'
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'pixel_pack/pixel_pack.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] pixel_pack/pixel_pack.cpp:47: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'out_stream.data.V' (pixel_pack/pixel_pack.cpp:28).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'in_stream.data.V' (pixel_pack/pixel_pack.cpp:28).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (pixel_pack/pixel_pack.cpp:40) in function 'pixel_pack' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-3' (pixel_pack/pixel_pack.cpp:78) in function 'pixel_pack' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-4' (pixel_pack/pixel_pack.cpp:97) in function 'pixel_pack' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-5' (pixel_pack/pixel_pack.cpp:114) in function 'pixel_pack' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (pixel_pack/pixel_pack.cpp:45) in function 'pixel_pack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.2' (pixel_pack/pixel_pack.cpp:54) in function 'pixel_pack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1' (pixel_pack/pixel_pack.cpp:82) in function 'pixel_pack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-4.1' (pixel_pack/pixel_pack.cpp:101) in function 'pixel_pack' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-5.1' (pixel_pack/pixel_pack.cpp:118) in function 'pixel_pack' completely.
+INFO: [HLS 200-111] Elapsed time: 3.18975 seconds; current memory usage: 82.8 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'pixel_pack' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'pixel_pack' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 5'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 2, Final II: 2, Depth: 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 2, Final II: 2, Depth: 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 4, Final II: 4, Depth: 4.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 4, Final II: 4, Depth: 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.058241 seconds; current memory usage: 83.5 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'pixel_pack' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.035899 seconds; current memory usage: 84.4 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pixel_pack' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/in_stream_data_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/in_stream_user_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/in_stream_last_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/out_stream_data_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/out_stream_user_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/out_stream_last_V' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/mode' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'pixel_pack/alpha_V' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on function 'pixel_pack' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Bundling port 'mode' and 'alpha_V' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Generated clock port 'control' for AXI-Lite bundle 'AXILiteS'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pixel_pack'.
+INFO: [HLS 200-111] Elapsed time: 0.10876 seconds; current memory usage: 85.5 MB.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for pixel_pack.
+INFO: [VHDL 208-304] Generating VHDL RTL for pixel_pack.
+INFO: [VLOG 209-307] Generating Verilog RTL for pixel_pack.
+INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
+
+****** Vivado v2016.1 (64-bit)
+  **** SW Build 1538259 on Fri Apr  8 15:45:23 MDT 2016
+  **** IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/thoyt/bin/xilinx/Vivado/2016.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  3 15:39:19 2017...
+INFO: [HLS 200-112] Total elapsed time: 33.510 seconds; peak memory usage: 85.5 MB.

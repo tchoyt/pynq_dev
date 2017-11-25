@@ -1,0 +1,6 @@
+FPGA Image Build Directories: base, logictools
+
+base - Pynq base image
+This image provides basic I/O functionality and is used as the source for the Petalinux BSP build
+
+logictools - Pynq logic tools FPGA image for arbitrary signal generation
