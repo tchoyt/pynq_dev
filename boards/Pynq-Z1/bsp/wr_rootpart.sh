@@ -64,7 +64,7 @@ function wr_fstab()
 BOARD_HOSTNAME=pynq
 BOARD_IP_ADDR=172.20.2.28
 ROOTFS_INSTALL_DIR=./rootfs_part
-ROOTFS_TARBALL=ubuntu-16.04.3-minimal-armhf-2017-10-07.tar.xz
+ROOTFS_TARBALL=ubuntu-16.04.3-minimal-armhf-2017-10-10.tar.xz
 
 # Install and configure rootFS
 sudo rm -fr ${ROOTFS_INSTALL_DIR}

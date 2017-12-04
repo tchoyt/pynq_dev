@@ -4,6 +4,8 @@ VIVADO_INSTALL_PATH=~/bin/xilinx/Vivado/2017.3
 PETALINUX_INSTALL_PATH=~/bin/petalinux_20173
 
 # Setup environment variables
+# export CROSS_COMPILE=aarch64-linux-gnu-
+# export ARCH=arm64
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
 export SWT_GTK3=0

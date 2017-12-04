@@ -53,13 +53,13 @@ else:
     pynq_data_files = [(os.path.join('{}/pynq/overlays'.format(site.getsitepackages()[0]), root.replace(board_folder, '')),
                         [os.path.join(root, f) for f in files]) for root, dirs, files in os.walk(board_folder)]
 
-# Pynq Family Constants
-ZYNQ_ARCH = "armv7l"
-CPU_ARCH = os.uname().machine
-CPU_ARCH_IS_SUPPORTED = CPU_ARCH in [ZYNQ_ARCH]
+# Pynq Family Constants - Check to see if the $ARCH is supported
+ZYNQ_ARCH = os.environ['ARCH']
+CPU_ARCH = ['arm','arm64']
+CPU_ARCH_IS_SUPPORTED = ZYNQ_ARCH in CPU_ARCH
 
 ''' Notebook Delivery '''
-default_nb_dir = '/home/xilinx/jupyter_notebooks'
+default_nb_dir = './build/jupyter_notebooks'
 if 'PYNQ_JUPYTER_NOTEBOOKS' in os.environ:
     notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
 elif os.path.exists(default_nb_dir):
