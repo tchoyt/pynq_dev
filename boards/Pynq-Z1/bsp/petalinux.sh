@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FPGA_PROJ=base
+FPGA_PROJ=debug
 
 # Increase the 'max_user_watches' setting to fix the petalinux build error
 function fix_petalinux() {
@@ -9,13 +9,13 @@ function fix_petalinux() {
 
 # Create the petalinux project
 function create_petalinux() {
-	rm -fr petalinux_build
-	petalinux-create --type project --template zynq --name petalinux_build
+	rm -fr build
+	petalinux-create --type project --template zynq --name build
 }
 
 # Import project from Vivado
 function import_petalinux() {
-	petalinux-config --get-hw-description=../$FPGA_PROJ/$FPGA_PROJ.sdk/
+	petalinux-config --get-hw-description=../../$FPGA_PROJ/$FPGA_PROJ.sdk/
 }
 
 # Configure the Kernel build
