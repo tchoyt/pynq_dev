@@ -7,8 +7,10 @@ PETALINUX_INSTALL_PATH=~/bin/petalinux_20173
 # export CROSS_COMPILE=aarch64-linux-gnu-
 # export ARCH=arm64
 export CROSS_COMPILE=arm-linux-gnueabihf-
+export MB_COMPILE=microblaze-xilinx-elf-
 export ARCH=arm
 export SWT_GTK3=0
+export BOARD=Pynq-Z1
 
 # Setup SW environment
 source $PETALINUX_INSTALL_PATH/settings.sh
