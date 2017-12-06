@@ -65,6 +65,7 @@ function wr_pynq_dir()
 {
 	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq
 	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq/lib
+}
 
 # Define variables
 BOARD_HOSTNAME=pynq
