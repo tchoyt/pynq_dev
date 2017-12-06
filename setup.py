@@ -18,10 +18,10 @@ CPU_ARCH_IS_SUPPORTED = ZYNQ_ARCH in CPU_ARCH
 BOARD = os.environ['BOARD']
 
 # Deploy Path
-DEPLOY_DIR = './boards/' + BOARD + '/bsp/rootfs_part/home/ubuntu/'
+DEPLOY_DIR = './boards/' + BOARD + '/bsp/'
 
 # Pynq Path
-PYNQ_DIR = './pynq/'
+PYNQ_DIR = 'pynq/'
 PYNQ_LIB = PYNQ_DIR + 'lib/'
 
 # Supported pynq modules
@@ -49,15 +49,16 @@ def cp_pynq(src_path,dst_path):
 		shutil.copyfile(src_path[i], dst_path + src_path[i])
 
 def main():
-	if BOARD is None:
-		print("Please set the BOARD environment variable (e.g. Pynq-Z1).")
-		sys.exit(1)
+	# Clean pynq DEPLOY_DIR
+	os.system('rm -fr ' + DEPLOY_DIR + PYNQ_DIR)
+	os.system('mkdir ' + DEPLOY_DIR + PYNQ_DIR)
+	os.system('mkdir ' + DEPLOY_DIR + PYNQ_LIB)
 
 	# Build Pynq Libraries, copy to DEPLOY_DIR
 	if CPU_ARCH_IS_SUPPORTED:
-		run_make("pynq/lib/_pynq/_apf/", DEPLOY_DIR + 'pynq/lib/', "libdma.so")
-		run_make("pynq/lib/_pynq/_audio/", DEPLOY_DIR + 'pynq/lib/', "libaudio.so")
-		run_make("pynq/libsds/xlnkutils/", DEPLOY_DIR + 'pynq/lib/', "libsds_lib.so")
+		run_make("pynq/lib/_pynq/_apf/", DEPLOY_DIR + PYNQ_LIB, "libdma.so")
+		run_make("pynq/lib/_pynq/_audio/", DEPLOY_DIR + PYNQ_LIB, "libaudio.so")
+		run_make("pynq/libsds/xlnkutils/", DEPLOY_DIR + PYNQ_LIB, "libsds_lib.so")
 	else:
 		warnings.warn("Pynq does not support the CPU Architecture: {}".format(CPU_ARCH), ResourceWarning)
 

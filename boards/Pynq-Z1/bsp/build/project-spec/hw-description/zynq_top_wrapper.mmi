@@ -12,7 +12,7 @@
   <Processor Endianness="Little" InstPath="zynq_top_i/processing_system7_0">
     <AddressSpace Name="zynq_top_i_processing_system7_0.zynq_top_i_axi_bram_ctrl_0" Begin="1073741824" End="1073745919">
       <BusBlock>
-        <BitLane MemType="RAMB36" Placement="X2Y17">
+        <BitLane MemType="RAMB36" Placement="X2Y16">
           <DataWidth MSB="31" LSB="0"/>
           <AddressRange Begin="0" End="1023"/>
           <Parity ON="false" NumBits="0"/>

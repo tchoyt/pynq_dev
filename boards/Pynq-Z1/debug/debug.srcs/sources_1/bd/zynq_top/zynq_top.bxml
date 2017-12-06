@@ -7,16 +7,16 @@
 		<Description>Composite Fileset</Description>
 		<Generation Name="SYNTHESIS"
 				State="RESET"
-				Timestamp="1512406473"/>
+				Timestamp="1512578136"/>
 		<Generation Name="IMPLEMENTATION"
 				State="RESET"
-				Timestamp="1512406473"/>
+				Timestamp="1512578136"/>
 		<Generation Name="SIMULATION"
 				State="RESET"
-				Timestamp="1512406473"/>
+				Timestamp="1512578136"/>
 		<Generation Name="HW_HANDOFF"
 				State="RESET"
-				Timestamp="1512406473"/>
+				Timestamp="1512578136"/>
 		<FileCollection Name="SOURCES"
 				Type="SOURCES">
 			<File Name="ip/zynq_top_processing_system7_0_0/zynq_top_processing_system7_0_0.xci"
@@ -47,6 +47,7 @@
 			</File>
 			<File Name="ip/zynq_top_ps7_0_axi_periph_0/zynq_top_ps7_0_axi_periph_0.xci"
 					Type="IP">
+				<Instance HierarchyPath="ps7_0_axi_periph"/>
 				<Properties IsEditable="false"
 						IsVisible="false"
 						Timestamp="0"
@@ -109,6 +110,71 @@
 				<UsedIn Val="IMPLEMENTATION"/>
 				<UsedIn Val="SIMULATION"/>
 			</File>
+			<File Name="ip/zynq_top_axi_dma_0_0/zynq_top_axi_dma_0_0.xci"
+					Type="IP">
+				<Instance HierarchyPath="axi_dma_0"/>
+				<Properties IsEditable="false"
+						IsVisible="true"
+						Timestamp="0"
+						IsTrackable="true"
+						IsStatusTracked="true"/>
+				<Library Name="xil_defaultlib"/>
+				<UsedIn Val="SYNTHESIS"/>
+				<UsedIn Val="IMPLEMENTATION"/>
+				<UsedIn Val="SIMULATION"/>
+			</File>
+			<File Name="ip/zynq_top_axi_smc_0/zynq_top_axi_smc_0.xci"
+					Type="IP">
+				<Instance HierarchyPath="axi_smc"/>
+				<Properties IsEditable="false"
+						IsVisible="true"
+						Timestamp="0"
+						IsTrackable="true"
+						IsStatusTracked="true"/>
+				<Library Name="xil_defaultlib"/>
+				<UsedIn Val="SYNTHESIS"/>
+				<UsedIn Val="IMPLEMENTATION"/>
+				<UsedIn Val="SIMULATION"/>
+			</File>
+			<File Name="ip/zynq_top_axis_data_fifo_0_0/zynq_top_axis_data_fifo_0_0.xci"
+					Type="IP">
+				<Instance HierarchyPath="axis_data_fifo_0"/>
+				<Properties IsEditable="false"
+						IsVisible="true"
+						Timestamp="0"
+						IsTrackable="true"
+						IsStatusTracked="true"/>
+				<Library Name="xil_defaultlib"/>
+				<UsedIn Val="SYNTHESIS"/>
+				<UsedIn Val="IMPLEMENTATION"/>
+				<UsedIn Val="SIMULATION"/>
+			</File>
+			<File Name="ip/zynq_top_xlconcat_0_0/zynq_top_xlconcat_0_0.xci"
+					Type="IP">
+				<Instance HierarchyPath="xlconcat_0"/>
+				<Properties IsEditable="false"
+						IsVisible="true"
+						Timestamp="0"
+						IsTrackable="true"
+						IsStatusTracked="true"/>
+				<Library Name="xil_defaultlib"/>
+				<UsedIn Val="SYNTHESIS"/>
+				<UsedIn Val="IMPLEMENTATION"/>
+				<UsedIn Val="SIMULATION"/>
+			</File>
+			<File Name="ip/zynq_top_auto_pc_1/zynq_top_auto_pc_1.xci"
+					Type="IP">
+				<Instance HierarchyPath="ps7_0_axi_periph/m02_couplers/auto_pc"/>
+				<Properties IsEditable="false"
+						IsVisible="true"
+						Timestamp="0"
+						IsTrackable="true"
+						IsStatusTracked="true"/>
+				<Library Name="xil_defaultlib"/>
+				<UsedIn Val="SYNTHESIS"/>
+				<UsedIn Val="IMPLEMENTATION"/>
+				<UsedIn Val="SIMULATION"/>
+			</File>
 			<File Name="ip/zynq_top_auto_pc_0/zynq_top_auto_pc_0.xci"
 					Type="IP">
 				<Instance HierarchyPath="ps7_0_axi_periph/m00_couplers/auto_pc"/>
@@ -122,7 +188,7 @@
 				<UsedIn Val="IMPLEMENTATION"/>
 				<UsedIn Val="SIMULATION"/>
 			</File>
-			<File Name="ip/zynq_top_auto_pc_1/zynq_top_auto_pc_1.xci"
+			<File Name="ip/zynq_top_auto_pc_2/zynq_top_auto_pc_2.xci"
 					Type="IP">
 				<Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
 				<Properties IsEditable="false"
