@@ -60,6 +60,12 @@ function wr_fstab()
 /dev/mmcblk0p1  /boot auto defaults  0  2' > ${ROOTFS_INSTALL_DIR}/etc/fstab"
 }
 
+# Write pynq dir to home directory
+function wr_pynq_dir()
+{
+	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq
+	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq/lib
+
 # Define variables
 BOARD_HOSTNAME=pynq
 BOARD_IP_ADDR=172.20.2.28
@@ -74,6 +80,7 @@ cp_rootfs
 wr_ethinterface
 wr_hostname
 wr_fstab
+wr_pynq_dir
 sync
 
 echo "-----------------------------"
