@@ -20,24 +20,24 @@ function import_petalinux() {
 
 # Configure the Kernel build
 function config_petalinux_kernel() {
-	petalinux-config --component kernel
+	petalinux-config --project ./build --component kernel
 }
 
 # Configure the u-Boot build
 function config_petalinux_uboot() {
-	petalinux-config --component u-boot
+	petalinux-config --project ./build --component u-boot
 }
 
 # Clean the petalinux workspace
 function clean_petalinux() {
-	petalinux-build --execute cleanall
-	petalinux-build --execute mrproper
+	petalinux-build --project ./build --execute cleanall
+	petalinux-build --project ./build --execute mrproper
 	rm -fr BOOT.BIN *.elf components/
 }
 
 # Build kernel, uBoot, Device Tree, FSBL with petalinux
 function build_petalinux() {
-	petalinux-build --component kernel
-	petalinux-build --component u-boot
-	petalinux-build --component bootloader
+	petalinux-build --project ./build --component kernel
+	petalinux-build --project ./build --component u-boot
+	petalinux-build --project ./build --component bootloader
 }

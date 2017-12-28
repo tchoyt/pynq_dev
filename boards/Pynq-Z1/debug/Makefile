@@ -1,3 +1,5 @@
+# Build an FPGA desgn with Vivado
+
 VIVADO_PROJFILE = $(wildcard *.xpr)
 VIVADO_PROJ = $(basename ${VIVADO_PROJFILE})
 
