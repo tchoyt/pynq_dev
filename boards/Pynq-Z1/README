@@ -1,0 +1,6 @@
+debug - FPGA image used to generate the BSP
+	Containts a simple block RAM and DMA loopback for testing software interfaces
+
+bsp - 	Directory containing the Petalinux build environment and scripts used to generat the rest of the BSP.
+	make install will write the boot and root paritions to local folders for imaging an SD card 
+	wr_sdcard.sh will copy those folders to an SD card after properly formating it

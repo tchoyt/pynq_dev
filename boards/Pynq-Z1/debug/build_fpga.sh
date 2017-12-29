@@ -1,5 +1,7 @@
 #!/bin/bash
 
+FPGA_IMG=debug
+
 # Get Vivado project name - will be the *.xpr file here
 function vivado_proj()
 {
@@ -14,13 +16,22 @@ function vivado_proj()
 
 # Clean the Vivado project
 function clean_fpga() {
-	vivado_proj
-	vivado -mode tcl -nojournal -nolog -source clean.tcl ${VIVADO_PROJ}.xpr
-	rm -fr *.cache/ *.runs/ *.ip_user_files/ *.hw/ *.ioplanning/	
+   vivado_proj
+	 vivado -mode tcl -nojournal -nolog -source clean.tcl ${VIVADO_PROJ}.xpr
+	 rm -fr *.cache/ *.runs/ *.ip_user_files/ *.hw/ *.ioplanning/	*.bit *.bin
 }
 
 # Run full FPGA build - Synthesis -> Implementation/Place & Route -> Bitstream Generation
 function build_fpga() {
-	vivado_proj
-    vivado -mode tcl -nojournal -nolog -source build.tcl ${VIVADO_PROJ}.xpr   
+	 vivado_proj
+   vivado -mode tcl -nojournal -nolog -source build.tcl ${VIVADO_PROJ}.xpr   
+}
+
+function clean_fpgaimg() {
+   rm -fr *.bit *.bin
+}
+
+function build_fpgaimg() {
+   bootgen -image fpga.bif -arch zynq -process_bitstream bin -w on 
+   mv $FPGA_IMG.bit.bin $FPGA_IMG.bin
 }

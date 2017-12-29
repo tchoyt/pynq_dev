@@ -1,4 +1,0 @@
-fpgaimage : 
-{
- 	zynq_top_wrapper.bit       
-}

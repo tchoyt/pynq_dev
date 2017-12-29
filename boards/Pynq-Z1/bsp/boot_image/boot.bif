@@ -1,5 +1,0 @@
-sdimage : 
-{
-	[bootloader] zynq_fsbl.elf
-    u-boot.elf
-}

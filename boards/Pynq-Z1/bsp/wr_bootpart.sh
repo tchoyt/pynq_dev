@@ -3,7 +3,7 @@
 # Copy FPGA image
 function cp_fpga_image()
 {
-	cp -v fpga_image/*.bit ${BOOT_INSTALL_DIR}/pynq.bit
+	cp -v fpga_image/*.bit.bin ${BOOT_INSTALL_DIR}/pynq.bit
 }
 
 # Copy boot image
