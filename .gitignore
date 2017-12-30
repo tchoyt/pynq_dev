@@ -1,0 +1,3 @@
+boards/Pynq-Z1/bsp/boot_part/
+boards/Pynq-Z1/bsp/rootfs_part/
+boards/Pynq-Z1/bsp/ubuntu-*-minimal-armhf-*

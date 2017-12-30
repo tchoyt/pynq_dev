@@ -1,15 +1,18 @@
 #!/bin/bash
 
+FPGA_PROJ=debug
+
 # Copy FPGA image
 function cp_fpga_image()
 {
-	cp -v fpga_image/*.bit.bin ${BOOT_INSTALL_DIR}/pynq.bit
+	cp -v ../${FPGA_PROJ}/${FPGA_PROJ}.bit ${BOOT_INSTALL_DIR}/pynq.bit
+	cp -v ../${FPGA_PROJ}/${FPGA_PROJ}.bin ${BOOT_INSTALL_DIR}/pynq.bin
 }
 
 # Copy boot image
 function cp_boot_image()
 {
-	cp -v boot_image/BOOT.bin ${BOOT_INSTALL_DIR}/.
+	cp -v ./BOOT.bin ${BOOT_INSTALL_DIR}/.
 }
 
 # Copy kernel image

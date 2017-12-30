@@ -14,12 +14,6 @@ function cp_rootfs()
 	fi
 }
 
-# Copy Python libraries
-# function cp_apps()
-# {
-# 	sudo cp -v uzed.py fpga_mmap.py ${ROOTFS_INSTALL_DIR}/home/ubuntu/.
-# }
-
 # Write /etc/network/interfaces
 function wr_ethinterface()
 {
@@ -77,7 +71,6 @@ ROOTFS_TARBALL=ubuntu-16.04.3-minimal-armhf-2017-10-10.tar.xz
 sudo rm -fr ${ROOTFS_INSTALL_DIR}
 mkdir ${ROOTFS_INSTALL_DIR}
 cp_rootfs
-# cp_apps
 wr_ethinterface
 wr_hostname
 wr_fstab
