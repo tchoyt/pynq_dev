@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2017.3.1 (lin64) Build 2035080 Fri Oct 20 14:20:00 MDT 2017
-//Date        : Wed Dec  6 10:17:39 2017
+//Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+//Date        : Tue Jan  2 10:37:30 2018
 //Host        : tchoytdell7510 running 64-bit Ubuntu 16.04.3 LTS
 //Command     : generate_target zynq_top_wrapper.bd
 //Design      : zynq_top_wrapper
@@ -30,8 +30,7 @@ module zynq_top_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb,
-    leds_4bits_tri_io);
+    FIXED_IO_ps_srstb);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -53,7 +52,6 @@ module zynq_top_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  inout [3:0]leds_4bits_tri_io;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -76,43 +74,7 @@ module zynq_top_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [0:0]leds_4bits_tri_i_0;
-  wire [1:1]leds_4bits_tri_i_1;
-  wire [2:2]leds_4bits_tri_i_2;
-  wire [3:3]leds_4bits_tri_i_3;
-  wire [0:0]leds_4bits_tri_io_0;
-  wire [1:1]leds_4bits_tri_io_1;
-  wire [2:2]leds_4bits_tri_io_2;
-  wire [3:3]leds_4bits_tri_io_3;
-  wire [0:0]leds_4bits_tri_o_0;
-  wire [1:1]leds_4bits_tri_o_1;
-  wire [2:2]leds_4bits_tri_o_2;
-  wire [3:3]leds_4bits_tri_o_3;
-  wire [0:0]leds_4bits_tri_t_0;
-  wire [1:1]leds_4bits_tri_t_1;
-  wire [2:2]leds_4bits_tri_t_2;
-  wire [3:3]leds_4bits_tri_t_3;
 
-  IOBUF leds_4bits_tri_iobuf_0
-       (.I(leds_4bits_tri_o_0),
-        .IO(leds_4bits_tri_io[0]),
-        .O(leds_4bits_tri_i_0),
-        .T(leds_4bits_tri_t_0));
-  IOBUF leds_4bits_tri_iobuf_1
-       (.I(leds_4bits_tri_o_1),
-        .IO(leds_4bits_tri_io[1]),
-        .O(leds_4bits_tri_i_1),
-        .T(leds_4bits_tri_t_1));
-  IOBUF leds_4bits_tri_iobuf_2
-       (.I(leds_4bits_tri_o_2),
-        .IO(leds_4bits_tri_io[2]),
-        .O(leds_4bits_tri_i_2),
-        .T(leds_4bits_tri_t_2));
-  IOBUF leds_4bits_tri_iobuf_3
-       (.I(leds_4bits_tri_o_3),
-        .IO(leds_4bits_tri_io[3]),
-        .O(leds_4bits_tri_i_3),
-        .T(leds_4bits_tri_t_3));
   zynq_top zynq_top_i
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -134,8 +96,5 @@ module zynq_top_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .leds_4bits_tri_i({leds_4bits_tri_i_3,leds_4bits_tri_i_2,leds_4bits_tri_i_1,leds_4bits_tri_i_0}),
-        .leds_4bits_tri_o({leds_4bits_tri_o_3,leds_4bits_tri_o_2,leds_4bits_tri_o_1,leds_4bits_tri_o_0}),
-        .leds_4bits_tri_t({leds_4bits_tri_t_3,leds_4bits_tri_t_2,leds_4bits_tri_t_1,leds_4bits_tri_t_0}));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
 endmodule

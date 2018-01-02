@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VIVADO_INSTALL_PATH=~/bin/xilinx/Vivado/2017.3
-PETALINUX_INSTALL_PATH=~/bin/petalinux_20173
+VIVADO_INSTALL_PATH=~/bin/xilinx/Vivado/2017.4
+PETALINUX_INSTALL_PATH=~/bin/petalinux_20174
 
 # Setup environment variables
 # export CROSS_COMPILE=aarch64-linux-gnu-

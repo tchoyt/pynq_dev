@@ -57,8 +57,8 @@ function wr_fstab()
 # Write pynq dir to home directory
 function wr_pynq_dir()
 {
-	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq
-	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/pynq/lib
+	sudo mkdir ${ROOTFS_INSTALL_DIR}/root/pynq
+	sudo mkdir ${ROOTFS_INSTALL_DIR}/root/pynq/lib
 }
 
 # Define variables
