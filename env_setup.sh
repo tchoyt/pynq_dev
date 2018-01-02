@@ -17,3 +17,11 @@ source $PETALINUX_INSTALL_PATH/settings.sh
 
 # Setup HW environment
 source $VIVADO_INSTALL_PATH/settings64.sh
+
+# Install dependencies for Ubuntu 16.04.3
+function install_pkgs() {
+	sudo apt-get update
+	sudo apt-get install tofrodos iproute2 gawk xvfb gcc git make net-tools libncurses5-dev tftpd zlib1g-dev:i386 libssl-dev flex bison libselinux1 \
+	gnupg wget diffstat chrpath socat xterm autoconf libtool tar unzip zlib1g-dev gcc-multilib build-essential libsdl1.2-dev libglib2.0-dev screen pax gzip \
+	bc device-tree-compiler lzma lzop
+}
