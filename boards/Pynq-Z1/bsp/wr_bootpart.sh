@@ -1,12 +1,10 @@
 #!/bin/bash
 
-FPGA_PROJ=debug
-
 # Copy FPGA image
 function cp_fpga_image()
 {
-	cp -v ../${FPGA_PROJ}/${FPGA_PROJ}.bit ${BOOT_INSTALL_DIR}/pynq.bit
-	cp -v ../${FPGA_PROJ}/${FPGA_PROJ}.bin ${BOOT_INSTALL_DIR}/pynq.bin
+	cp -v ../${FPGA_PROJ}/${FPGA_IMG} ${BOOT_INSTALL_DIR}/pynq.bit
+	cp -v ../${FPGA_PROJ}/${FPGA_BIN} ${BOOT_INSTALL_DIR}/pynq.bin
 }
 
 # Copy boot image
@@ -18,13 +16,13 @@ function cp_boot_image()
 # Copy kernel image
 function cp_kernel()
 {
-	cp -v build/images/linux/zImage ${BOOT_INSTALL_DIR}/.
+	cp -v ${PETA_PROJ}/images/linux/zImage ${BOOT_INSTALL_DIR}/.
 }
 
 # Copy device tree
 function cp_dtb()
 {
-	cp -v build/images/linux/system.dtb ${BOOT_INSTALL_DIR}/.
+	cp -v ${PETA_PROJ}/images/linux/system.dtb ${BOOT_INSTALL_DIR}/.
 }
 
 # Define variables

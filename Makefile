@@ -5,7 +5,7 @@ all: fpga bsp
 
 # FPGA image
 fpga:
-	make -C ./boards/${BOARD}/debug/
+	make -C ./boards/${BOARD}/${FPGA_PROJ}/
 
 # Linux kernel, device tree, u-boot, bootloader
 bsp:
@@ -16,5 +16,5 @@ install:
 	make install -C ./boards/${BOARD}/bsp/
 
 clean:
-	make clean -C ./boards/${BOARD}/debug/
+	make clean -C ./boards/${BOARD}/${FPGA_PROJ}/
 	make clean -C ./boards/${BOARD}/bsp/

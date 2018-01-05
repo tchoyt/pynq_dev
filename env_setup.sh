@@ -14,9 +14,13 @@ export BOARD=Pynq-Z1
 
 # Setup SW environment
 source $PETALINUX_INSTALL_PATH/settings.sh
+export PETA_PROJ=build
 
 # Setup HW environment
 source $VIVADO_INSTALL_PATH/settings64.sh
+export FPGA_PROJ=debug
+export FPGA_IMG=${FPGA_PROJ}.bit
+export FPGA_BIN=${FPGA_PROJ}.bin
 
 # Install dependencies for Ubuntu 16.04.3
 function install_pkgs() {
