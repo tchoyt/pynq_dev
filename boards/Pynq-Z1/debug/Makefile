@@ -3,7 +3,6 @@ VIVADO_PROJFILE = $(wildcard *.xpr)
 VIVADO_PROJ = $(basename ${VIVADO_PROJFILE})
 
 all: ${VIVADO_PROJ}.bit ${VIVADO_PROJ}.bin
-.PHONY : all
 
 ${VIVADO_PROJ}.bit:
 	vivado -mode tcl -nojournal -nolog -source build.tcl ${VIVADO_PROJFILE}
@@ -14,6 +13,7 @@ ${VIVADO_PROJ}.bin:
 	bootgen -image fpga.bif -arch zynq -process_bitstream bin -w on
 	mv ${VIVADO_PROJ}.bit.bin ${FPGA_BIN}
 
+.PHONY: clean
 clean:
 	vivado -mode tcl -nojournal -nolog -source clean.tcl ${VIVADO_PROJFILE}
 	rm -fr *.cache/ *.runs/ *.ip_user_files/ *.hw/ *.ioplanning/ *.bit *.bin *.bif

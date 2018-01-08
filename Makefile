@@ -4,6 +4,7 @@ all: fpga bsp
 .PHONY : all
 
 # FPGA image
+.PHONY : fpga
 fpga:
 	make -C ./boards/${BOARD}/${FPGA_PROJ}/
 
