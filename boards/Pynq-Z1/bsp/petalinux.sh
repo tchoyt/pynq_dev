@@ -13,7 +13,7 @@ function create_petalinux() {
 
 # Import project from Vivado
 function import_petalinux() {
-	petalinux-config --get-hw-description=../../$FPGA_PROJ/$FPGA_PROJ.sdk/
+	petalinux-config --project ${PETA_PROJ} --get-hw-description=../../$FPGA_PROJ/$FPGA_PROJ.sdk/
 }
 
 # Configure the Kernel build
