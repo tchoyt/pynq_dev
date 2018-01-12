@@ -30,7 +30,7 @@ function config_petalinux_uboot() {
 function clean_petalinux() {
 	petalinux-build --project ${PETA_PROJ} --execute cleanall
 	petalinux-build --project ${PETA_PROJ} --execute mrproper
-	rm -fr BOOT.BIN *.elf components/
+	rm -fr BOOT.BIN ${PETA_PROJ}/components/
 }
 
 # Build kernel, uBoot, Device Tree, FSBL with petalinux
