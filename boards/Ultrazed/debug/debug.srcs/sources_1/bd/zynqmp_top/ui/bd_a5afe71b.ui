@@ -1,0 +1,22 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace inst rst_zynqmp_ps_159M -pg 1 -lvl 1 -y 100 -defaultsOSRD
+preplace inst axi_hpm0_addr -pg 1 -lvl 2 -y 320 -defaultsOSRD
+preplace inst zynqmp_ps -pg 1 -lvl 1 -y 280 -defaultsOSRD
+preplace inst axi_bram_ctrl -pg 1 -lvl 3 -y 340 -defaultsOSRD
+preplace inst axi_bram -pg 1 -lvl 4 -y 340 -defaultsOSRD
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 N
+preplace netloc zynqmp_ps_M_AXI_HPM0_LPD 1 1 1 N
+preplace netloc zynqmp_ps_pl_resetn0 1 0 2 20 10 650
+preplace netloc zynqmp_ps_pl_clk0 1 0 3 30 190 660 440 960J
+preplace netloc rst_zynqmp_ps_159M_interconnect_aresetn 1 1 1 680
+preplace netloc rst_zynqmp_ps_159M_peripheral_aresetn 1 1 2 670 450 970J
+preplace netloc axi_hpm0_addr_M00_AXI 1 2 1 N
+levelinfo -pg 1 0 340 820 1110 1370 1490 -top 0 -bot 460
+",
+}
+{
+   da_clkrst_cnt: "3",
+}

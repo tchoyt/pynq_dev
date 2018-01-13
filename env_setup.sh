@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VIVADO_INSTALL_PATH=~/bin/xilinx/Vivado/2017.4
-PETALINUX_INSTALL_PATH=~/bin/petalinux_20174
+PETALINUX_INSTALL_PATH=~/bin/petalinux/2017.4
 
 # Setup environment variables
 # export CROSS_COMPILE=aarch64-linux-gnu-
@@ -10,6 +10,8 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 export MB_COMPILE=microblaze-xilinx-elf-
 export ARCH=arm
 export SWT_GTK3=0
+# export BOARD=Ultrazed
+# export BOARD=Microzed
 export BOARD=Pynq-Z1
 
 # Setup SW environment
