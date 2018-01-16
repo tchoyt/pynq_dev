@@ -73,8 +73,7 @@ options+=(--help:HELP)
 options+=(-p:SD_PART)
 options+=(--part:SD_PART)
 options+=(--dev=:SD_DEV)
-
-. parseopt.sh
+source ../../../parseopt.sh
 
 if [ "$HELP" == 1 ] 
 then
