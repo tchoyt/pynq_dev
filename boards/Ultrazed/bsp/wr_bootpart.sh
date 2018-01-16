@@ -21,7 +21,8 @@ function cp_dtb()
 # Copy FPGA image
 function cp_fpgaimg()
 {
-	cp -v ../fpga/${FPGA_PROJ}/*.bit ${BOOT_INSTALL_DIR}/${FPGA_BIT}
+	cp -v ../${FPGA_PROJ}/${FPGA_IMG} ${BOOT_INSTALL_DIR}/pynq.bit
+	cp -v ../${FPGA_PROJ}/${FPGA_BIN} ${BOOT_INSTALL_DIR}/pynq.bin
 }
 
 # Define variables

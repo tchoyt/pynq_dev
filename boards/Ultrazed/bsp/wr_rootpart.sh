@@ -3,13 +3,13 @@
 # Copy rootfs
 function cp_rootfs()
 {
-	sudo unsquashfs -f -d ${ROOTFS_INSTALL_DIR} ../software/ubuntu-server-16043-arm64.squashfs
+	sudo unsquashfs -f -d ${ROOTFS_INSTALL_DIR} ./${ROOTFS_IMAGE}
 }
 
 # Copy FPGA image
 function cp_fpgaimg()
 {
-	sudo cp -v ..${FPGA_PROJ}/*.bin ${ROOTFS_INSTALL_DIR}/lib/firmware/${FPGA_BIN}
+	sudo cp -v ../${FPGA_PROJ}/*.bin ${ROOTFS_INSTALL_DIR}/lib/firmware/${FPGA_BIN}
 }
 
 # Write /etc/network/interfaces
@@ -63,7 +63,7 @@ function wr_pynq_dir()
 BOARD_HOSTNAME=pynq
 BOARD_IP_ADDR=172.20.2.28
 ROOTFS_INSTALL_DIR=./rootfs_part
-ROOTFS_TARBALL=ubuntu-16.04.3-minimal-armhf-2017-10-10.tar.xz
+ROOTFS_IMAGE=ubuntu-server-16042-arm64.squashfs
 
 # Install and configure rootFS
 sudo rm -fr ${ROOTFS_INSTALL_DIR}
