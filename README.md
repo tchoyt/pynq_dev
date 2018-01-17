@@ -9,6 +9,9 @@ Tested on Ubuntu 16.04.3 64-bit
 
 Boards Supported: Pynq-Z1, Microzed, Ultrazed + I/O Breakout
 
+Install Vivado Board Files:
+1. Extract the contents 'vivado_board_files.tar.xz' to VIVADO_INSTALL_DIRECTORY/Vivado/2017.4/data/boards/board_files/.
+
 Help: 
 1. ./env_setup.sh --help
 

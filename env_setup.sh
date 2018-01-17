@@ -3,9 +3,10 @@
 # Install dependencies for Ubuntu 16.04.3
 function install_pkgs() {
 	sudo apt-get update
-	sudo apt-get install tofrodos iproute2 gawk xvfb gcc git make net-tools libncurses5-dev tftpd zlib1g-dev:i386 libssl-dev flex bison libselinux1 \
+	sudo apt-get install tofrodos iproute2 gawk xvfb gcc git make net-tools libncurses5-dev zlib1g-dev:i386 libssl-dev flex bison libselinux1 \
 	gnupg wget diffstat chrpath socat xterm autoconf libtool tar unzip zlib1g-dev gcc-multilib build-essential libsdl1.2-dev libglib2.0-dev screen pax gzip \
 	bc device-tree-compiler lzma lzop texinfo
+	INSTALL=""
 }
 
 # Print help menu
@@ -17,7 +18,7 @@ function print_help()
    	echo -e "--install      = Install dependencies for Ubuntu 16.04.3"
    	echo -e "--vivado       = Specify a Vivado Installation Directory"
    	echo -e "--petalinux    = Specify a Petalinux Installation Directory"
-	exit
+   	HELP=""
 }
 
 # Xilinx Tool Setup
@@ -32,10 +33,10 @@ function xilinx_tool_setup() {
 	then
 		PETALINUX_PATH=~/bin/petalinux/2017.4
 	fi
-	echo -e "Setup Vivado environment..."
+	echo -e "Setting up Vivado..."
 	source $VIVADO_PATH/settings64.sh
 	VIVADO_PATH=""
-	echo -e "Setup Petalinux environment..."
+	echo -e "Setting up Petalinux..."
 	source $PETALINUX_PATH/settings.sh
 	PETALINUX_PATH=""
 }
@@ -52,7 +53,7 @@ export FPGA_BIN=${FPGA_PROJ}.bin
 options=()
 options+=(--help:HELP)
 options+=(--install:INSTALL)
-options+=(--board=:BOARD)
+options+=(--board=:TARGET)
 options+=(--vivado=:VIVADO_PATH)
 options+=(--petalinux=:PETALINUX_PATH)
 source parseopt.sh
@@ -61,38 +62,37 @@ source parseopt.sh
 if [ "$HELP" == 1 ] 
 then
 	print_help
-	exit
-fi
-
 # Install packages
-if [ "$INSTALL" == 1 ] 
+elif [ "$INSTALL" == 1 ] 
 then
 	echo -e "Installing dependencies for Ubuntu 16.04.3..."
    	install_pkgs
-   	exit
-fi
-
 # Board specific envrionment variables
-if [ "$BOARD" == "Pynq-Z1" ]
+elif [ "$TARGET" == "Pynq-Z1" ]
 then
+	echo -e "Configuring envrionment for ${TARGET}..."
 	xilinx_tool_setup
 	export CROSS_COMPILE=arm-linux-gnueabihf-
 	export ARCH=arm
-	export BOARD=${BOARD}
-elif [ "$BOARD" == "Microzed" ]
+	export BOARD=${TARGET}
+	TARGET=""
+elif [ "$TARGET" == "Microzed" ]
 then
+	echo -e "Configuring envrionment for ${TARGET}..."
 	xilinx_tool_setup
 	export CROSS_COMPILE=arm-linux-gnueabihf-
 	export ARCH=arm
-	export BOARD=${BOARD}
-elif [ "$BOARD" == "Ultrazed" ]
+	export BOARD=${TARGET}
+	TARGET=""
+elif [ "$TARGET" == "Ultrazed" ]
 then
+	echo -e "Configuring envrionment for ${TARGET}..."
 	xilinx_tool_setup
 	export CROSS_COMPILE=aarch64-linux-gnu-
 	export ARCH=arm64
-	export BOARD=${BOARD}
+	export BOARD=${TARGET}
+	TARGET=""
 else
 	echo -e "ERROR: Need to specify a supported board."
 	print_help
-	exit
 fi

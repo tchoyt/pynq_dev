@@ -65,20 +65,20 @@
         <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_s00_data_fifo_0/zynqmp_top_s00_data_fifo_0.xci">
           <Proxy FileSetName="zynqmp_top_s00_data_fifo_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_auto_pc_0/zynqmp_top_auto_pc_0.xci">
-          <Proxy FileSetName="zynqmp_top_auto_pc_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_rst_zynqmp_ps_159M_0/zynqmp_top_rst_zynqmp_ps_159M_0.xci">
           <Proxy FileSetName="zynqmp_top_rst_zynqmp_ps_159M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_zynqmp_ps_0/zynqmp_top_zynqmp_ps_0.xci">
-          <Proxy FileSetName="zynqmp_top_zynqmp_ps_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_axi_bram_ctrl_0/zynqmp_top_axi_bram_ctrl_0.xci">
           <Proxy FileSetName="zynqmp_top_axi_bram_ctrl_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_axi_bram_0/zynqmp_top_axi_bram_0.xci">
           <Proxy FileSetName="zynqmp_top_axi_bram_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_zynqmp_ps_0/zynqmp_top_zynqmp_ps_0.xci">
+          <Proxy FileSetName="zynqmp_top_zynqmp_ps_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="zynqmp_top.bd" FileRelPathName="ip/zynqmp_top_auto_pc_0/zynqmp_top_auto_pc_0.xci">
+          <Proxy FileSetName="zynqmp_top_auto_pc_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/zynqmp_top/hdl/zynqmp_top_wrapper.v">

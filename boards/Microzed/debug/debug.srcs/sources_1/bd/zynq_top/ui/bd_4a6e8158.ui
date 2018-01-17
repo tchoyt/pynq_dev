@@ -14,25 +14,25 @@ preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -y 340 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 520 -defaultsOSRD
 preplace inst axis_data_fifo_0 -pg 1 -lvl 2 -y 120 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 340 710 NJ 710 NJ 710 NJ 710 1860
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 410 420 NJ 420 NJ 420 NJ 420 1910
 preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 NJ
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 320 210 700 250 1070
-preplace netloc axi_smc_M00_AXI 1 4 1 1400
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -50 700 NJ 700 NJ 700 NJ 700 NJ 700 1840
-preplace netloc axi_dma_0_M_AXI_SG 1 3 1 1090
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 710
-preplace netloc axi_dma_0_s2mm_introut 1 3 1 1080
-preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1100
-preplace netloc xlconcat_0_dout 1 4 1 1390
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 390 210 770 250 1140
+preplace netloc axi_smc_M00_AXI 1 4 1 1470
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 30 410 NJ 410 NJ 410 NJ 410 NJ 410 1920
+preplace netloc axi_dma_0_M_AXI_SG 1 3 1 1160
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 780
+preplace netloc axi_dma_0_s2mm_introut 1 3 1 1150
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1170
+preplace netloc xlconcat_0_dout 1 4 1 1460
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
-preplace netloc axi_dma_0_mm2s_introut 1 3 1 1090
+preplace netloc axi_dma_0_mm2s_introut 1 3 1 1160
 preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 N
 preplace netloc axis_data_fifo_0_M_AXIS 1 2 1 N
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -50 410 330 200 690 260 1100 390 1380 620 1850
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 680
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 3 320 10 NJ 10 1070
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 20 400 400 200 760 270 1170 430 1450 620 1910
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 750
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 3 390 10 NJ 10 1140
 preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 N
-levelinfo -pg 1 -70 140 510 890 1240 1620 1880 -top 0 -bot 930
+levelinfo -pg 1 0 210 580 960 1310 1690 1940 -top 0 -bot 700
 ",
 }
 0
