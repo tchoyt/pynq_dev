@@ -76,6 +76,7 @@ then
 	xilinx_tool_setup
 	export CROSS_COMPILE=arm-linux-gnueabihf-
 	export ARCH=arm
+	export ZYNQ=zynq
 	export BOARD=${TARGET}
 	TARGET=""
 elif [ "$TARGET" == "Microzed" ]
@@ -84,6 +85,7 @@ then
 	xilinx_tool_setup
 	export CROSS_COMPILE=arm-linux-gnueabihf-
 	export ARCH=arm
+	export ZYNQ=zynq
 	export BOARD=${TARGET}
 	TARGET=""
 elif [ "$TARGET" == "Ultrazed" ]
@@ -92,6 +94,7 @@ then
 	xilinx_tool_setup
 	export CROSS_COMPILE=aarch64-linux-gnu-
 	export ARCH=arm64
+	export ZYNQ=zynqmp
 	export BOARD=${TARGET}
 	TARGET=""
 else
