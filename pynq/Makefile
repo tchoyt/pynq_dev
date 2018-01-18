@@ -23,5 +23,12 @@ clean:
 	make clean -C ./${AUDIO}
 	make clean -C ./${XLNK}
 
+# Copy pynq libs and python modules to the pynq deploy path
 install:
-	echo "PYNQ INSTALL"
+	cp -v ./${APF}/*.so ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_LIB_PATH}
+	cp -v ./${AUDIO}/*.so ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_LIB_PATH}
+	cp -v ./${XLNK}/*.so ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_LIB_PATH}
+	cp -v ./lib/dma.py ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_LIB_PATH}
+	cp -v ./ps.py ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_PATH}
+	cp -v ./mmio.py ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_PATH}
+	cp -v ./xlnk.py ../boards/${BOARD}/bsp/rootfs_part/home/ubuntu/${PYNQ_PATH}

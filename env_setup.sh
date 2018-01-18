@@ -48,6 +48,8 @@ export PETA_PROJ=build
 export FPGA_PROJ=debug
 export FPGA_IMG=${FPGA_PROJ}.bit
 export FPGA_BIN=${FPGA_PROJ}.bin
+export PYNQ_PATH=pynq
+export PYNQ_LIB_PATH=${PYNQ_PATH}/lib
 
 # Parse command line options
 options=()
