@@ -12,7 +12,3 @@ libsds_lib.so:
 
 clean:
 	-rm -f *.so
-
-install: libsds_lib.so
-	cp -avf libsds_lib.so /usr/lib/
-	cp -arvf libxlnk_cma.h /usr/include/
