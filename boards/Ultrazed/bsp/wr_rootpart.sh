@@ -55,15 +55,16 @@ function wr_fstab()
 # Write pynq dir to home directory
 function wr_pynq_dir()
 {
-	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/${PYNQ_PATH}
-	mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/${PYNQ_LIB_PATH}
+	sudo mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/${PYNQ_PATH}
+	sudo mkdir ${ROOTFS_INSTALL_DIR}/home/ubuntu/${PYNQ_LIB_PATH}
+	sudo chown -R $('whoami') ${ROOTFS_INSTALL_DIR}/home/ubuntu/${PYNQ_PATH}
 }
 
 # Define variables
 BOARD_HOSTNAME=pynq
 BOARD_IP_ADDR=172.20.2.28
 ROOTFS_INSTALL_DIR=./rootfs_part
-ROOTFS_IMAGE=ubuntu-server-16042-arm64.squashfs
+ROOTFS_IMAGE=ubuntu-server-16043-arm64.squashfs
 
 # Install and configure rootFS
 sudo rm -fr ${ROOTFS_INSTALL_DIR}

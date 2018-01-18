@@ -58,7 +58,7 @@ options+=(--install:INSTALL)
 options+=(--board=:TARGET)
 options+=(--vivado=:VIVADO_PATH)
 options+=(--petalinux=:PETALINUX_PATH)
-source parseopt.sh
+source ./scripts/parseopt.sh
 
 # Help
 if [ "$HELP" == 1 ] 

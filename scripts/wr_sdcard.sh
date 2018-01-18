@@ -3,10 +3,10 @@
 # Print help menu
 function print_help()
 {
-   echo -e "Syntax: wr_sdcard.sh --dev <SD Card Device>"
-   echo -e "-h --help   = Print this menu"
-   echo -e "-p --part 	= Partition SD Card"
-   echo -e "--dev 		= SD Card Device"
+   echo -e "Syntax:  wr_sdcard.sh --dev <SD Card Device>"
+   echo -e "--help   = Print this menu"
+   echo -e "--part   = Partition SD Card"
+   echo -e "--dev    = SD Card Device"
    exit
 }
 
@@ -61,19 +61,17 @@ function cp_boot()
 }
 
 # Define variables
-BOOT_MOUNT_DIR=./boot_install
-BOOT_INSTALL_DIR=./boot_part
-ROOTFS_MOUNT_DIR=./rootfs_install
-ROOTFS_INSTALL_DIR=./rootfs_part
+BOOT_MOUNT_DIR=./boards/${BOARD}/bsp/boot_install
+BOOT_INSTALL_DIR=./boards/${BOARD}/bsp/boot_part
+ROOTFS_MOUNT_DIR=./boards/${BOARD}/bsp/rootfs_install
+ROOTFS_INSTALL_DIR=./boards/${BOARD}/bsp/rootfs_part
 
 # Parse command line options
 options=()
-options+=(-h:HELP)
 options+=(--help:HELP)
-options+=(-p:SD_PART)
 options+=(--part:SD_PART)
 options+=(--dev=:SD_DEV)
-source ../../../parseopt.sh
+source ./scripts/parseopt.sh
 
 if [ "$HELP" == 1 ] 
 then
@@ -83,8 +81,8 @@ fi
 
 if [ "$SD_DEV" == "" ] 
 then
-	echo -e "ERROR:  Need to specify SD Card device"
-	echo -e "Syntax: wr_sdcard.sh --dev <SD Card Device>\n"
+	echo -e "ERROR:  Need to specify SD Card device\n"
+	print_help
    	lsblk
    	exit
 fi

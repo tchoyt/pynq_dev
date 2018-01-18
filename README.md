@@ -13,8 +13,9 @@ Install Vivado Board Files:
 1. Extract the contents 'vivado_board_files.tar.xz' to VIVADO_INSTALL_DIRECTORY/Vivado/2017.4/data/boards/board_files/.
 
 Help: 
-1. ./env_setup.sh --help
+1. ./scripts/env_setup.sh --help
 
 Quick and dirty build instructions:
-1. source env_setup.sh --board <BOARD> --vivado <INSTALL DIRECTORY> --petalinux <INSTALL DIRECTORY>
+1. source scripts/env_setup.sh --board <BOARD> --vivado <INSTALL DIRECTORY> --petalinux <INSTALL DIRECTORY>
 2. make all && make install
+
