@@ -30,6 +30,7 @@ function install_board_files()
 	then
 		VIVADO_PATH=~/bin/xilinx/Vivado/2017.4
 	fi
+	# Check for valid vivado board file path
 	if [ -d ${VIVADO_PATH}/data/boards/board_files ]
 	then
 		echo -e "Installing Vivado board files: '${VIVADO_PATH}/data/boards/board_files/'"
