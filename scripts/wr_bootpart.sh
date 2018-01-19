@@ -28,9 +28,9 @@ function cp_dtb()
 # Define variables
 BOOT_INSTALL_DIR=./boot_part
 
-echo "-----------------------------"
-echo "Installing Boot Partition... "
-echo "-----------------------------"
+echo "--------------------------------------"
+echo "Installing ${BOARD} Boot Partition... "
+echo "--------------------------------------"
 rm -fr ${BOOT_INSTALL_DIR}
 mkdir ${BOOT_INSTALL_DIR}
 cp_fpga_image

@@ -24,4 +24,4 @@ bootimage:
 
 install:
 	../../../scripts/wr_bootpart.sh
-	./wr_rootpart.sh
+	../../../scripts/wr_rootpart.sh
