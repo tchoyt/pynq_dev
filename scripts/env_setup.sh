@@ -1,12 +1,20 @@
 #!/bin/bash
 
 # Install dependencies for Ubuntu 16.04.3
-function install_pkgs() {
+function install_pkgs() 
+{
+	echo -e "Installing dependencies for Ubuntu 16.04.3..."
 	sudo apt-get update
 	sudo apt-get install tofrodos iproute2 gawk xvfb gcc git make net-tools libncurses5-dev zlib1g-dev:i386 libssl-dev flex bison libselinux1 \
 	gnupg wget diffstat chrpath socat xterm autoconf libtool tar unzip zlib1g-dev gcc-multilib build-essential libsdl1.2-dev libglib2.0-dev screen pax gzip \
 	bc device-tree-compiler lzma lzop texinfo
-	INSTALL=""
+}
+
+# Install Vivado board files
+function install_board_files() 
+{
+	echo -e "Installing Vivado board files..."
+	tar xf vivado_board_files.tar.xz -C ${VIVADO_PATH}/data/boards/board_files/.
 }
 
 # Print help menu
@@ -22,23 +30,23 @@ function print_help()
 }
 
 # Xilinx Tool Setup
-function xilinx_tool_setup() {
+function xilinx_tool_setup() 
+{
 	# Default vivado path
-	if [ "$VIVADO_PATH" == "" ]
+	if [ "${VIVADO_PATH}" == "" ]
 	then
 		VIVADO_PATH=~/bin/xilinx/Vivado/2017.4
 	fi
 	# Default petalinux path
-	if [ "$PETALINUX_PATH" == "" ]
+	if [ "${PETALINUX_PATH}" == "" ]
 	then
 		PETALINUX_PATH=~/bin/petalinux/2017.4
 	fi
 	echo -e "Setting up Vivado..."
-	source $VIVADO_PATH/settings64.sh
-	VIVADO_PATH=""
+	echo -e "Vivado environment set to '${VIVADO_PATH}'"
+	source ${VIVADO_PATH}/settings64.sh
 	echo -e "Setting up Petalinux..."
-	source $PETALINUX_PATH/settings.sh
-	PETALINUX_PATH=""
+	source ${PETALINUX_PATH}/settings.sh
 }
 
 # Common environment variables
@@ -67,8 +75,9 @@ then
 # Install packages
 elif [ "$INSTALL" == 1 ] 
 then
-	echo -e "Installing dependencies for Ubuntu 16.04.3..."
-   	install_pkgs
+	install_pkgs
+   	install_board_files
+   	INSTALL=""
 # Board specific envrionment variables
 elif [ "$TARGET" == "Pynq-Z1" ]
 then

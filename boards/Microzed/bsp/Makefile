@@ -23,5 +23,5 @@ bootimage:
 	bootgen -image boot.bif -arch zynq -o BOOT.bin -w on 
 
 install:
-	./wr_bootpart.sh
+	../../../scripts/wr_bootpart.sh
 	./wr_rootpart.sh

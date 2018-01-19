@@ -9,13 +9,10 @@ Tested on Ubuntu 16.04.3 64-bit
 
 Boards Supported: Pynq-Z1, Microzed, Ultrazed + I/O Breakout
 
-Install Vivado Board Files:
-1. Extract the contents 'vivado_board_files.tar.xz' to VIVADO_INSTALL_DIRECTORY/Vivado/2017.4/data/boards/board_files/.
+Setup environment - Installs Vivado board files and dependencies for Ubuntu 16.04.3:
+1. Download and install Vivado Webpack and Petalinux 2017.4
+2. source scripts/env_setup.sh --install --vivado VIVADO_INSTALL --petalinux PETALINUX_INSTALL
 
-Help: 
-1. ./scripts/env_setup.sh --help
-
-Quick and dirty build instructions:
-1. source scripts/env_setup.sh --board <BOARD> --vivado <INSTALL DIRECTORY> --petalinux <INSTALL DIRECTORY>
-2. make all && make install
-
+Quick and dirty build instructions - Configures environment for specified boar and Vivado and Petalinux paths above:
+1. source scripts/env_setup.sh --board <BOARD>
+2. make all

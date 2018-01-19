@@ -13,10 +13,10 @@ function cp_boot_image()
 	cp -v ./BOOT.bin ${BOOT_INSTALL_DIR}/.
 }
 
-# Copy kernel image
+# Copy kernel image - Image or zImage
 function cp_kernel()
 {
-	cp -v ${PETA_PROJ}/images/linux/zImage ${BOOT_INSTALL_DIR}/.
+	cp -v ${PETA_PROJ}/images/linux/*Image ${BOOT_INSTALL_DIR}/.
 }
 
 # Copy device tree
@@ -28,14 +28,12 @@ function cp_dtb()
 # Define variables
 BOOT_INSTALL_DIR=./boot_part
 
-# Install boot partitions
+echo "-----------------------------"
+echo "Installing Boot Partition... "
+echo "-----------------------------"
 rm -fr ${BOOT_INSTALL_DIR}
 mkdir ${BOOT_INSTALL_DIR}
 cp_fpga_image
 cp_boot_image
 cp_kernel
 cp_dtb
-
-echo "-----------------------------"
-echo "Boot Script Complete"
-echo "-----------------------------"
