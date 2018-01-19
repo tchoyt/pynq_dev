@@ -11,8 +11,8 @@ Boards Supported: Pynq-Z1, Microzed, Ultrazed + I/O Breakout
 
 Setup environment - Installs Vivado board files and dependencies for Ubuntu 16.04.3:
 1. Download and install Vivado Webpack and Petalinux 2017.4
-2. source scripts/env_setup.sh --install --vivado VIVADO_INSTALL --petalinux PETALINUX_INSTALL
+2. source scripts/env_setup.sh --install --vivado INSTALL_PATH --petalinux INSTALL PATH
 
 Quick and dirty build instructions - Configures environment for specified boar and Vivado and Petalinux paths above:
-1. source scripts/env_setup.sh --board <BOARD>
+1. source scripts/env_setup.sh --board BOARD
 2. make all
