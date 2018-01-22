@@ -3,6 +3,12 @@
 # Print help menu
 function print_help()
 {
+	if [ "${BOARD}" == "" ]
+	then
+		echo -e "Environment is NOT configured."
+	else
+		echo -e "Environment configured for ${BOARD}"
+	fi
 	echo -e "Syntax:        env_setup.sh --board <Pynq-Z1|Microzed|Ultrazed>"
 	echo -e "--board        = Board Configuration: <Pynq-Z1|Microzed|Ultrazed>"
    	echo -e "--help         = Print this menu"
