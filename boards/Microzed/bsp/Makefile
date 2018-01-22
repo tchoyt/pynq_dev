@@ -19,7 +19,9 @@ clean:
 	rm -fr BOOT.bin *.bif
 
 bootimage:
-	echo "sdimage : { [bootloader] ${PETA_PROJ}/images/linux/zynq_fsbl.elf ${PETA_PROJ}/images/linux/u-boot.elf }" > boot.bif
+	echo "sdimage : { \
+	[bootloader] ${PETA_PROJ}/images/linux/zynq_fsbl.elf \
+	${PETA_PROJ}/images/linux/u-boot.elf }" > boot.bif
 	bootgen -image boot.bif -arch zynq -o BOOT.bin -w on 
 
 install:
