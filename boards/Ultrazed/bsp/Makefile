@@ -26,7 +26,7 @@ bootimage:
 	[destination_cpu=pmu, pmufw_image] ${PETA_PROJ}/images/linux/pmufw.elf \
 	[destination_cpu=a53-0, exception_level=el-3, trustzone] ${PETA_PROJ}/images/linux/bl31.elf \
 	[destination_cpu=a53-0, exception_level=el-2] ${PETA_PROJ}/images/linux/u-boot.elf }" > boot.bif
-	bootgen -image boot.bif -arch zynqmp -o BOOT.bin -w on 
+	bootgen -image boot.bif -arch ${ZYNQ} -o BOOT.bin -w on 
 
 install:
 	../../../scripts/wr_bootpart.sh
