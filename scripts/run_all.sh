@@ -25,6 +25,7 @@ function clean_all()
 		source scripts/env_setup.sh --board $i
 		make clean
 		git checkout ./boards/$i/${FPGA_PROJ}/${FPGA_PROJ}.srcs/sources_1/bd/
+		git checkout ./boards/$i/${FPGA_PROJ}/${FPGA_PROJ}.xpr
 	done
 	echo "-------------------------------"
 	echo "Cleaning all the boards... DONE"
