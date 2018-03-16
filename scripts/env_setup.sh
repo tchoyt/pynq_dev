@@ -12,7 +12,8 @@ function print_help()
 	echo -e "Syntax:        env_setup.sh --board <Pynq-Z1|Microzed|Ultrazed>"
 	echo -e "--board        = Board Configuration: <Pynq-Z1|Microzed|Ultrazed>"
    	echo -e "--help         = Print this menu"
-   	echo -e "--install      = Install Vivado board files & build dependencies for Ubuntu 16.04.3"
+   	echo -e "--install      = Install Vivado board files & Petalinux build dependencies for Ubuntu 16.04"
+   	echo -e "--depends      = Install Petalinux build dependencies for Ubuntu 16.04"
    	echo -e "--vivado       = Specify a Vivado Installation Directory"
    	echo -e "--petalinux    = Specify a Petalinux Installation Directory"
    	HELP=""
@@ -21,7 +22,7 @@ function print_help()
 # Install build dependencies for Ubuntu 16.04.3
 function install_pkgs() 
 {
-	echo -e "Installing build dependencies for Ubuntu 16.04.3..."
+	echo -e "Installing Petalinux build dependencies for Ubuntu 16.04..."
 	sudo apt-get update
 	sudo apt-get install tofrodos iproute2 gawk xvfb gcc git make net-tools libncurses5-dev zlib1g-dev:i386 libssl-dev flex bison libselinux1 \
 	gnupg wget diffstat chrpath socat xterm autoconf libtool tar unzip zlib1g-dev gcc-multilib build-essential libsdl1.2-dev libglib2.0-dev screen pax gzip \
@@ -81,6 +82,7 @@ export PYNQ_LIB_PATH=${PYNQ_PATH}/lib
 options=()
 options+=(--help:HELP)
 options+=(--install:INSTALL)
+options+=(--depends:DEPENDS)
 options+=(--board=:TARGET)
 options+=(--vivado=:VIVADO_PATH)
 options+=(--petalinux=:PETALINUX_PATH)
@@ -90,12 +92,17 @@ source ./scripts/parseopt.sh
 if [ "$HELP" == 1 ] 
 then
 	print_help
-# Install packages
+# Install packages + board files
 elif [ "$INSTALL" == 1 ] 
 then
 	install_pkgs
    	install_board_files
    	INSTALL=""
+# Install dependencies
+elif [ "$DEPENDS" == 1 ] 
+then
+	install_pkgs
+   	DEPENDS=""
 # Board specific envrionment variables
 elif [ "$TARGET" == "Pynq-Z1" ]
 then
